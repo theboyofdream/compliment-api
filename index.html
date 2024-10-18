@@ -56,8 +56,11 @@
       ></span>
     </div>
     <script>
+      const URL = `${document.location.origin}/public/randomcompliment/compliment/random`;
+      document.querySelector("a").href = URL;
+      document.querySelector("a").innerText = URL;
       function fetchCompliment() {
-        fetch("./public/randomcompliment/compliment/random")
+        fetch(URL)
           .then((r) => r.text())
           .then((r) => (document.getElementById("compliment").innerText = r))
           .catch(console.error);
