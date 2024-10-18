@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "./index.html")));
 
+app.get("/api", (req, res) => res.send(compliment()));
+
 app.get("/public/randomcompliment/compliment/random", (req, res) =>
   res.send(compliment())
 );
