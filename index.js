@@ -13,3 +13,5 @@ app.get("/public/randomcompliment/compliment/random", (req, res) =>
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+module.exports = app;
