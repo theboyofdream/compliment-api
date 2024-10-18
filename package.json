@@ -2,5 +2,15 @@
   "name": "complimentr.api",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon run index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
 }
