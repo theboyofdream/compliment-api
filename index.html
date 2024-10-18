@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Compliment | theboyofdream</title>
+    <style>
+      * {
+        word-break: break-all;
+      }
+      html,
+      body {
+        min-height: 100vh;
+        max-width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+      button {
+        min-width: 100px;
+        padding: 0.25rem 0.6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span style="font-size: xx-large; font-weight: bold"
+        >Random Compliment API demo</span
+      >
+      <span>
+        API URL:<br />
+        <a
+          href="./public/randomcompliment/compliment/random"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          http://localhost:3000/public/randomcompliment/compliment/random
+        </a>
+      </span>
+      <button onclick="fetchCompliment()">TRY</button>
+      <span
+        id="compliment"
+        style="
+          padding: 1rem;
+          background: whitesmoke;
+          box-shadow: 1px solid silver;
+        "
+      ></span>
+    </div>
+    <script>
+      function fetchCompliment() {
+        fetch("./public/randomcompliment/compliment/random")
+          .then((r) => r.text())
+          .then((r) => (document.getElementById("compliment").innerText = r))
+          .catch(console.error);
+      }
+      fetchCompliment();
+    </script>
+  </body>
+</html>
